@@ -9,8 +9,26 @@
 
 
   <!-- New Dawn typography: the same original Free Realms face used by the wordmark. -->
-  <Style Selector="TextBlock, Label, Button, TextBox, ComboBox, CheckBox, RadioButton">
-    <Setter Property="FontFamily" Value="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold" />
+  <Style Selector="TextBlock">
+    <Setter Property="TextBlock.FontFamily" Value="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold" />
+  </Style>
+  <Style Selector="Label">
+    <Setter Property="Label.FontFamily" Value="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold" />
+  </Style>
+  <Style Selector="Button">
+    <Setter Property="Button.FontFamily" Value="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold" />
+  </Style>
+  <Style Selector="TextBox">
+    <Setter Property="TextBox.FontFamily" Value="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold" />
+  </Style>
+  <Style Selector="ComboBox">
+    <Setter Property="ComboBox.FontFamily" Value="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold" />
+  </Style>
+  <Style Selector="CheckBox">
+    <Setter Property="CheckBox.FontFamily" Value="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold" />
+  </Style>
+  <Style Selector="RadioButton">
+    <Setter Property="RadioButton.FontFamily" Value="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold" />
   </Style>
   <Style Selector="Button">
     <Setter Property="FontSize" Value="15" />
