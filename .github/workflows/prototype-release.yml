@@ -1,0 +1,45 @@
+name: Publish New Dawn Prototype Release
+
+on:
+  push:
+    paths:
+      - .github/workflows/prototype-release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish source-only prototype pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > release-notes.md <<'EOF'
+          ## Free Realms: New Dawn Launcher — Prototype 0.1.0
+
+          **Early development preview — NOT A WORKING GAME LAUNCHER.**
+
+          This source-only snapshot contains the first New Dawn layout changes:
+          - Fixed-size desktop window (800 × 550), with no resizing or maximizing
+          - Single-realm layout with no public server selector
+          - Green Play Now button connected to inherited launch logic
+          - Aero-inspired styling
+          - User-supplied Free Realms screenshot as the window background
+
+          **Known limitations:** This version has not passed a Windows compilation or functional test. Server configuration and login/launch flows are not finalized. No installers or executables are provided. Do not expect the game to launch.
+
+          **License:** GNU AGPL-3.0. Upstream attribution and original license remain in the repository. This is an unofficial fan project.
+          EOF
+          if gh release view "v0.1.0-preview.1" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release already exists; no changes made."
+          else
+            gh release create "v0.1.0-preview.1" \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$GITHUB_SHA" \
+              --title "New Dawn Launcher v0.1.0 — Prototype" \
+              --notes-file release-notes.md \
+              --prerelease
+          fi
