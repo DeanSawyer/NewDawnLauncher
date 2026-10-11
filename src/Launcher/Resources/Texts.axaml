@@ -15,8 +15,8 @@
   <x:String x:Key="Text.Add" xml:space="preserve">Add</x:String>
 
   <!-- Main Window -->
-  <x:String x:Key="Text.Servers" xml:space="preserve">Server List</x:String>
-  <x:String x:Key="Text.Title" xml:space="preserve">OSFR Launcher</x:String>
+  <x:String x:Key="Text.Servers" xml:space="preserve">SERVERS</x:String>
+  <x:String x:Key="Text.Title" xml:space="preserve">Free Realms: New Dawn</x:String>
   <x:String x:Key="Text.Main.Relaunching" xml:space="preserve">Relaunching...</x:String>
   <x:String x:Key="Text.Main.NoUpdatesFound" xml:space="preserve">No Updates Found! Launcher is up-to-date.</x:String>
   <x:String x:Key="Text.Main.Downloading" xml:space="preserve">>Downloading Update {0}... ({1}%)</x:String>
@@ -88,7 +88,7 @@
 
   <!-- Discord -->
   <x:String x:Key="Text.Discord.Playing" xml:space="preserve">Playing on Server(s): </x:String>
-  <x:String x:Key="Text.Discord.Idle" xml:space="preserve">Idling in the OSFR Launcher</x:String>
+  <x:String x:Key="Text.Discord.Idle" xml:space="preserve">Exploring New Dawn</x:String>
 
   <!-- Logs -->
   <x:String x:Key="Text.Logs" xml:space="preserve">Open Logs</x:String>
