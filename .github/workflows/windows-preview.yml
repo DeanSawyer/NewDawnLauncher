@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - .github/workflows/windows-preview.yml
+      - src/Launcher/**
   workflow_dispatch:
 
 permissions:
