@@ -31,17 +31,18 @@
 
   <!-- Background -->
   <Window.Background>
-    <ImageBrush Source="/Assets/backround.png" />
+    <ImageBrush Source="/Assets/backround.png" Stretch="UniformToFill" AlignmentX="Center" AlignmentY="Center" />
   </Window.Background>
 
   <Grid ColumnDefinitions="*" RowDefinitions="*">
+    <Border Background="#2207132D" IsHitTestVisible="False" />
 
     <!-- New Dawn single-server layout; server configuration stays available in settings. -->
     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom"
                 Margin="16" Orientation="Horizontal" Spacing="10"
                 Panel.ZIndex="2">
-      <Button Content="Settings" Command="{Binding ShowSettingsCommand}" />
-      <Button Content="View Logs" Command="{Binding OpenLogsCommand}" />
+      <Button Content="Settings" Command="{Binding ShowSettingsCommand}" Background="#C821496F" Foreground="White" CornerRadius="8" Padding="16,8" />
+      <Button Content="View Logs" Command="{Binding OpenLogsCommand}" Background="#C821496F" Foreground="White" CornerRadius="8" Padding="16,8" />
     </StackPanel>
 
     <Button Content="Configure Server"
