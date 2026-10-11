@@ -25,23 +25,23 @@ jobs:
         run: |
           dotnet publish ./src/Launcher/Launcher.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:PublishReadyToRun=false -o ./preview
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-      - name: Package preview
-        shell: pwsh
-        run: Compress-Archive -Path ./preview/* -DestinationPath ./NewDawnLauncher-win-x64-preview.zip
       - uses: actions/upload-artifact@v4
         with:
           name: NewDawnLauncher-win-x64-preview
-          path: NewDawnLauncher-win-x64-preview.zip
+          path: preview/
           if-no-files-found: error
+      - name: Package release ZIP
+        shell: pwsh
+        run: Compress-Archive -Path ./preview/* -DestinationPath ./NewDawnLauncher-win-x64-preview.zip
       - name: Publish downloadable preview release
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release view v0.1.0-preview.2 --repo "$env:GITHUB_REPOSITORY" *> $null
+          gh release view v0.1.0-preview.3 --repo "$env:GITHUB_REPOSITORY" *> $null
           if ($LASTEXITCODE -eq 0) {
             gh release upload v0.1.0-preview.2 ./NewDawnLauncher-win-x64-preview.zip --repo "$env:GITHUB_REPOSITORY" --clobber
           } else {
-            gh release create v0.1.0-preview.2 ./NewDawnLauncher-win-x64-preview.zip --repo "$env:GITHUB_REPOSITORY" --target "$env:GITHUB_SHA" --title "New Dawn Launcher v0.1.0 Preview 2" --prerelease --notes "Experimental Windows x64 executable. Not verified for successful login or gameplay. Original AGPL-3.0 source remains available in this repository."
+            gh release create v0.1.0-preview.2 ./NewDawnLauncher-win-x64-preview.zip --repo "$env:GITHUB_REPOSITORY" --target "$env:GITHUB_SHA" --title "New Dawn Launcher v0.1.0 Preview 3" --prerelease --notes "Experimental Windows x64 executable. Not verified for successful login or gameplay. Original AGPL-3.0 source remains available in this repository."
           }
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
