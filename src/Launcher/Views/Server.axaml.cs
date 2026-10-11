@@ -12,7 +12,7 @@ public partial class Server : UserControl
         InitializeComponent();
     }
 
-    protected override async void OnDataContextChanged()
+    protected override async void OnDataContextEndUpdate()
     {
         try
         {
