@@ -62,7 +62,9 @@ public partial class Main : ObservableObject
         {
             var serverInfo = Settings.Instance.ServerInfoList[e.NewStartingIndex];
 
-            Servers.Add(new Server(serverInfo, this));
+            var server = new Server(serverInfo, this);
+            Servers.Add(server);
+            ActiveServer ??= server;
         }
         else if (e.Action == NotifyCollectionChangedAction.Remove && e.OldStartingIndex != -1)
         {
@@ -77,7 +79,9 @@ public partial class Main : ObservableObject
     {
         foreach (var serverInfo in Settings.Instance.ServerInfoList)
         {
-            Servers.Add(new Server(serverInfo, this));
+            var server = new Server(serverInfo, this);
+            Servers.Add(server);
+            ActiveServer ??= server;
         }
 
         if (Settings.Instance.ServerInfoList.Count == 0)
