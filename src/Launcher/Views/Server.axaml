@@ -33,7 +33,7 @@
     </StackPanel>
 
     <StackPanel Grid.Row="2" Margin="0,22,0,0" HorizontalAlignment="Center" Spacing="12">
-      <Border CornerRadius="14" BorderThickness="2" BorderBrush="#B2D6B0"
+      <Border HorizontalAlignment="Center" CornerRadius="14" BorderThickness="2" BorderBrush="#A9EDB4"
               BoxShadow="0 0 20 2 #5503E860">
         <Button Width="300" Height="72"
                 Command="{Binding PlayCommand}"
@@ -41,13 +41,25 @@
                 Cursor="Hand" CornerRadius="12"
                 FontSize="30" FontWeight="Bold"
                 Foreground="White" Content="Play Now!">
-          <Button.Background>
-            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
-              <GradientStop Offset="0" Color="#96E97D"/>
-              <GradientStop Offset="0.45" Color="#26B83B"/>
-              <GradientStop Offset="1" Color="#075620"/>
-            </LinearGradientBrush>
-          </Button.Background>
+          <!-- Explicit template prevents global transparent button styles from hiding the fill. -->
+          <Button.Template>
+            <ControlTemplate TargetType="Button">
+              <Border CornerRadius="12" BorderThickness="1" BorderBrush="#B4F9BB">
+                <Border.Background>
+                  <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                    <GradientStop Offset="0" Color="#86E47B"/>
+                    <GradientStop Offset="0.46" Color="#31BC45"/>
+                    <GradientStop Offset="1" Color="#087028"/>
+                  </LinearGradientBrush>
+                </Border.Background>
+                <ContentPresenter Content="{TemplateBinding Content}"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  HorizontalContentAlignment="Center"
+                                  VerticalContentAlignment="Center" />
+              </Border>
+            </ControlTemplate>
+          </Button.Template>
         </Button>
       </Border>
       <TextBlock Text="{Binding StatusMessage, Mode=OneWay}"
@@ -55,8 +67,8 @@
                  HorizontalAlignment="Center"
                  IsVisible="{Binding StatusMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
       <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Spacing="10">
-        <Button Command="{Binding OpenFolderCommand}" Content="Open Folder" />
-        <Button Command="{Binding RefreshCommand}" Content="Refresh" />
+        <Button Command="{Binding OpenFolderCommand}" Content="Open Folder" Background="#C821496F" Foreground="White" CornerRadius="8" Padding="16,8" />
+        <Button Command="{Binding RefreshCommand}" Content="Refresh" Background="#C821496F" Foreground="White" CornerRadius="8" Padding="16,8" />
       </StackPanel>
     </StackPanel>
   </Grid>
