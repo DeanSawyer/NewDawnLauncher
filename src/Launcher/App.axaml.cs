@@ -26,7 +26,7 @@ public partial class App : Application
     private Main _main = null!;
     private Window _window = null!;
 
-    private const string GitHubRepoUrl = "https://github.com/Open-Source-Free-Realms/Launcher";
+    private const string GitHubRepoUrl = "https://github.com/DeanSawyer/NewDawnLauncher";
     private static readonly UpdateManager _updateManager = new(new GithubSource(GitHubRepoUrl, null, false));
 
     public static SemanticVersion CurrentVersion => _updateManager.CurrentVersion ?? new SemanticVersion(0, 0, 0);
