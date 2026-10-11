@@ -18,15 +18,44 @@
 
   <!-- New Dawn single-realm landing screen. The PlayCommand retains upstream game launch behavior. -->
   <Grid RowDefinitions="*,Auto,Auto,*">
-    <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5">
-      <Border Width="380" Height="1" Background="#88D9EFFF" Margin="0,0,0,8" />
-      <TextBlock Text="FREE REALMS" FontFamily="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold" FontSize="44" FontWeight="Normal"
-                 Foreground="#F1E0BC" TextAlignment="Center"
-                 HorizontalAlignment="Center" />
-      <TextBlock Text="NEW DAWN" FontFamily="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold" FontSize="32" FontWeight="Normal"
-                 Foreground="#D3F0FF" TextAlignment="Center"
-                 HorizontalAlignment="Center" />
-      <Border Background="#700B2439" CornerRadius="8" Padding="12,4" HorizontalAlignment="Center">
+    <!-- Layered wordmark gives the original two-line branding depth without changing the background. -->
+    <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="0">
+      <Border Width="390" Height="1" Background="#88D9EFFF" Margin="0,0,0,8" />
+
+      <Grid HorizontalAlignment="Center">
+        <TextBlock Text="FREE REALMS" FontFamily="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold"
+                   FontSize="46" FontWeight="Normal" Foreground="#C0081325"
+                   Margin="2,4,0,0" TextAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="FREE REALMS" FontFamily="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold"
+                   FontSize="46" FontWeight="Normal" TextAlignment="Center" HorizontalAlignment="Center">
+          <TextBlock.Foreground>
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+              <GradientStop Offset="0" Color="#FFFDF0D5"/>
+              <GradientStop Offset="0.48" Color="#FFF2D695"/>
+              <GradientStop Offset="1" Color="#FFD29D50"/>
+            </LinearGradientBrush>
+          </TextBlock.Foreground>
+        </TextBlock>
+      </Grid>
+
+      <Grid HorizontalAlignment="Center" Margin="0,-5,0,0">
+        <TextBlock Text="NEW DAWN" FontFamily="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold"
+                   FontSize="34" FontWeight="Normal" Foreground="#DB061B34"
+                   Margin="2,4,0,0" TextAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="NEW DAWN" FontFamily="avares://Launcher/Assets/Fonts#FreeRealmsDemiBold"
+                   FontSize="34" FontWeight="Normal" TextAlignment="Center" HorizontalAlignment="Center">
+          <TextBlock.Foreground>
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+              <GradientStop Offset="0" Color="#FFFFFFFF"/>
+              <GradientStop Offset="0.45" Color="#FFDAF5FF"/>
+              <GradientStop Offset="1" Color="#FF7AC7F2"/>
+            </LinearGradientBrush>
+          </TextBlock.Foreground>
+        </TextBlock>
+      </Grid>
+
+      <Border Background="#A00B2439" BorderBrush="#6688C9F6" BorderThickness="1"
+              CornerRadius="8" Padding="12,4" HorizontalAlignment="Center" Margin="0,9,0,0">
         <TextBlock Text="{Binding Info.Name, Mode=OneWay}" FontSize="13"
                    Foreground="#E7F3F9" HorizontalAlignment="Center" />
       </Border>
