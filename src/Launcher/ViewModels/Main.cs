@@ -69,9 +69,8 @@ public partial class Main : ObservableObject
         else if (e.Action == NotifyCollectionChangedAction.Remove && e.OldStartingIndex != -1)
         {
             Servers.RemoveAt(e.OldStartingIndex);
-            // If ActiveServer was removed, set to null
             if (ActiveServer != null && !Servers.Contains(ActiveServer))
-                ActiveServer = null;
+                ActiveServer = Servers.FirstOrDefault();
         }
     }
 
@@ -86,7 +85,7 @@ public partial class Main : ObservableObject
 
         if (Settings.Instance.ServerInfoList.Count == 0)
         {
-            _logger.Info("No servers found in settings. Adding default servers.");
+            _logger.Info("No servers configured. Waiting for New Dawn server configuration.");
             foreach (var defaultServerUrl in Constants.DefaultServerUrls)
             {
                 _ = AddServer.TryAddServerAsync(defaultServerUrl);
