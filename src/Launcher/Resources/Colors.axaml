@@ -5,16 +5,16 @@
     <Border Padding="20" Background="{StaticResource Color.FG1}" />
   </Design.PreviewWith>
 
-  <SolidColorBrush x:Key="Color.Window">#FF252525</SolidColorBrush>
-  <SolidColorBrush x:Key="Color.Popup">#2A3A61</SolidColorBrush>
-  <SolidColorBrush x:Key="Color.Contents">#FF181818</SolidColorBrush>
-  <SolidColorBrush x:Key="Color.Server">#0D000000</SolidColorBrush>
+  <SolidColorBrush x:Key="Color.Window">#FF141E29</SolidColorBrush>
+  <SolidColorBrush x:Key="Color.Popup">#263A50</SolidColorBrush>
+  <SolidColorBrush x:Key="Color.Contents">#FF101923</SolidColorBrush>
+  <SolidColorBrush x:Key="Color.Server">#B30B1826</SolidColorBrush>
   <SolidColorBrush x:Key="Color.Description">#000000</SolidColorBrush>
-  <SolidColorBrush x:Key="Color.Border">#3C4C74</SolidColorBrush>
+  <SolidColorBrush x:Key="Color.Border">#476D84</SolidColorBrush>
   <SolidColorBrush x:Key="Color.FlatButton.PrimaryBackground">#3C4C74</SolidColorBrush>
   <SolidColorBrush x:Key="Color.FlatButton.PrimaryBackgroundHovered">#3C4C74</SolidColorBrush>
   <SolidColorBrush x:Key="Color.FG1">#ffffff</SolidColorBrush>
-  <SolidColorBrush x:Key="Color.FG2">#40F1F1F1</SolidColorBrush>
+  <SolidColorBrush x:Key="Color.FG2">#A5C1CC</SolidColorBrush>
   <SolidColorBrush x:Key="Color.Accent1">#3C4C74</SolidColorBrush>
 
 </ResourceDictionary>
